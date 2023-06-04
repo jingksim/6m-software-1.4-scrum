@@ -8,21 +8,41 @@
 
 // Task: Add code here
 
+class BaseSignal {
+    constructor() {
+        if(new.target==="BaseSignal") {
+            throw new Error("direct instantiation is not allow");
+        }
+    }
+
+    send(){
+        
+        console.log(`Sending ${this.type} signal`);
+
+    } 
+}
+
 class TvSignal extends BaseSignal {
     constructor(){
         // Add code here
+        super();
+        this.type = "Tv";
     }
 }
 
 class AirconSignal extends BaseSignal {
     constructor(){
         // Add code here
+        super();
+        this.type = "aircon";
     }
 }
 
 class DoorSignal extends BaseSignal {
     constructor(){
         // Add code here
+        super();
+        this.type = "door";
     }
 }
 
